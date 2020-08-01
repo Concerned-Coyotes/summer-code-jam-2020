@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+
+class Article(models.Model):
+
+    source = models.CharField()
+    author = models.CharField()
+    title = models.CharField()
+    description = models.CharField()
+    content = models.CharField(max_length=200)
+    url = models.URLField()
+    # in utc
+    published_at = models.DateTimeField()
