@@ -30,7 +30,7 @@ class Article(models.Model):
     # >>> Article.objects.create_article({...})
 
     source = models.CharField(max_length=256)
-    author = models.CharField(default="unknown")
+    author = models.CharField(default="unknown", max_length=256)
     title = models.CharField(max_length=256)
     description = models.CharField(max_length=256)
     content = models.CharField(max_length=200)
