@@ -29,10 +29,10 @@ class Article(models.Model):
     # now we can do
     # >>> Article.objects.create_article({...})
 
-    source = models.CharField()
+    source = models.CharField(max_length=256)
     author = models.CharField(default="unknown")
-    title = models.CharField()
-    description = models.CharField()
+    title = models.CharField(max_length=256)
+    description = models.CharField(max_length=256)
     content = models.CharField(max_length=200)
     url = models.URLField()
     # in utc
