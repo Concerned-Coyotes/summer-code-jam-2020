@@ -55,3 +55,6 @@ class Article(models.Model):
     url = models.URLField()
     # in utc
     published_at = models.DateTimeField()
+
+    def __str__(self):
+        return f"<Article: {self.title} {self.published_at.isoformat()}>"
