@@ -7,6 +7,15 @@ from django.utils.dateparse import parse_datetime
 class ArticleManager(models.Manager):
 
     def create_article(self, raw_article: Dict[str, Union[str, Dict[str, str]]]):
+        """
+        Create a new article in the database from the json data given
+        by NewsApiClient.get_top_headlines['articles']
+
+        >>> Article.objects.create_article({...})
+
+        :param raw_article: Dictionary containing information about the article
+        :return: New instance of Article
+        """
 
         # convert timezone aware iso date string to datetime.datetime
         published_at = parse_datetime(raw_article['publishedAt'])
@@ -25,6 +34,7 @@ class ArticleManager(models.Manager):
     def get_latest(self, n_items):
         """
         Return the latest n articles
+
         :param n_items: How many articles to return
         :return: List of n newest articles
         """
