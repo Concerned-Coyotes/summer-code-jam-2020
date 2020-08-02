@@ -13,8 +13,10 @@ def get_news():
     client = NewsApiClient(api_key=API_KEY)
     result = client.get_top_headlines()
     articles = result['articles']
+
     # save to db
     for article in articles:
         Article.objects.create_article(article)
 
+    print(f"Added {len(articles)} Articles")
     return articles
