@@ -22,6 +22,14 @@ class ArticleManager(models.Manager):
         )
         return article
 
+    def get_latest(self, n_items):
+        """
+        Return the latest n articles
+        :param n_items: How many articles to return
+        :return: List of n newest articles
+        """
+        return super().get_queryset().order_by("-published_at")[:n_items]
+
 
 class Article(models.Model):
 
