@@ -57,4 +57,4 @@ class Article(models.Model):
     published_at = models.DateTimeField()
 
     def __str__(self):
-        return f"<Article: {self.title} {self.published_at.isoformat()}>"
+        return f"{self.title} {self.published_at.isoformat()}"
