@@ -34,7 +34,7 @@ class ArticleTestCase(TestCase):
         """
         article = {
             'source': {'id': 'news-com-au', 'name': 'News.com.au'},
-            'author': 'Andrew McMurtry',
+            'author': None,
             'title': 'F1 British Grand Prix live: updates, results, starting grid, Vettel reacts to Ferrari sabotage '
                      'questions',
             'description': 'The British Grand Prix has ended in incredible drama as the last lap went down to the '
@@ -43,18 +43,16 @@ class ArticleTestCase(TestCase):
                    '-prix/live-coverage/ba297f46d4e91321c092db9d3d5d2e1f',
             'urlToImage': 'https://content.api.news/v3/images/bin/2554ff2213b5c8a54e9809d310e697db',
             'publishedAt': '2020-08-02T22:04:07Z',
-            'content': 'The British Grand Prix has ended in incredible drama as the last lap went down to the wire '
-                       'with Lewis Hamilton winning after his tyre blew on the last lap.The World Champion knew that '
-                       'he only just he… [+9131 chars] '
+            'content': None
         }
         created = Article.objects.create_article(article)
         self.assertEqual(article['source']['name'], created.source)
-        self.assertEqual(article['author'], created.author)
+        self.assertEqual('unknown', created.author)
         self.assertEqual(article['title'], created.title)
         self.assertEqual(article['description'], created.description)
         self.assertEqual(article['url'], created.url)
         self.assertEqual(parse_datetime(article['publishedAt']), created.published_at)
-        self.assertEqual(article['content'], created.content)
+        self.assertEqual('...', created.content)
 
     def test_article_manager_get_latest(self):
         """ Test Article.objects.get_latest """
