@@ -9,6 +9,11 @@ class NewsConfig(AppConfig):
         if settings.TESTING:
             return
 
-        from .tasks import get_news
-        from background_task.models import Task
-        get_news(repeat=Task.DAILY, repeat_until=None)
+        # Create the Task for fetching the news
+        # only if it does not exist yet
+        from django_q.models import Schedule
+        Schedule.objects.get_or_create(
+            func='news.tasks.get_news',
+            schedule_type='D',
+            repeats=-1
+        )
