@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_q',
     'news.apps.NewsConfig'
+    'wikipedia.apps.WikipediaConfig'
 ]
 
 MIDDLEWARE = [
