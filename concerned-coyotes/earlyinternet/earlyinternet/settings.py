@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'background_task',
+    'django_q',
     'news.apps.NewsConfig'
 ]
 
@@ -125,3 +125,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Django_Q config
+Q_CLUSTER = {
+    "name": "ScheduledTasks",
+    "orm": "default",  # Use Django's ORM + database for broker
+}
