@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'wikipedia.apps.WikipediaConfig',
     'dashboard',
+    'todo'
 ]
 
 MIDDLEWARE = [
