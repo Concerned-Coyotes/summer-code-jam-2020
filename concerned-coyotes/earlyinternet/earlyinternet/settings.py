@@ -31,15 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Modules
+    'widget_tweaks',
+    # Apps
     'wikipedia.apps.WikipediaConfig',
+    'account',
     'dashboard',
+
 ]
 
 MIDDLEWARE = [
@@ -120,3 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Authentication
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "/account/login"
+LOGOUT_REDIRECT_URL = "/account/login"
