@@ -43,12 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_q',
-    'news.apps.NewsConfig',
-    'dashboard',
     # Modules
     'widget_tweaks',
     # Apps
     'wikipedia.apps.WikipediaConfig',
+    'news.apps.NewsConfig',
     'account',
     'dashboard',
 ]
