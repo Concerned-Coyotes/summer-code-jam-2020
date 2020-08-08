@@ -45,8 +45,12 @@ INSTALLED_APPS = [
     'django_q',
     'news.apps.NewsConfig',
     'dashboard',
+    # Modules
+    'widget_tweaks',
+    # Apps
     'wikipedia.apps.WikipediaConfig',
-    'dashboard.apps.DashboardConfig',
+    'account',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -134,3 +137,7 @@ Q_CLUSTER = {
     "name": "ScheduledTasks",
     "orm": "default",  # Use Django's ORM + database for broker
 }
+# Authentication
+LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "/account/login"
+LOGOUT_REDIRECT_URL = "/account/login"
