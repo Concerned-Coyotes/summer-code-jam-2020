@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django_q',
     'news.apps.NewsConfig',
     'dashboard',
+    'wikipedia.apps.WikipediaConfig',
+    'dashboard.apps.DashboardConfig',
 ]
 
 MIDDLEWARE = [
