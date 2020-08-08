@@ -1,6 +1,7 @@
 asgiref==3.2.10
 Django==3.0.8
 django-widget-tweaks==1.4.8
+feedparser==5.2.1
 flake8==3.8.3
 mccabe==0.6.1
 pycodestyle==2.6.0
