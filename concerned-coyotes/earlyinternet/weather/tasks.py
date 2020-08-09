@@ -18,7 +18,9 @@ def update_weather_for_user(user: User) -> None:
         city=weather['city'],
         sunrise=weather['sunrise'],
         sunset=weather['sunset'],
-        day=weather['day']
+        day=weather['day'],
+        latitude=lat,
+        longitude=lon,
     )
 
 
