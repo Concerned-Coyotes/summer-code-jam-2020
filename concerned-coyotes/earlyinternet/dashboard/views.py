@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 
+from weather.tasks import update_weather_for_user  # noqa: F401
+
 
 @login_required
 def index(request: HttpRequest) -> HttpResponse:
@@ -83,8 +85,8 @@ def update_location(request: HttpRequest) -> HttpResponse:
                 latitude=latitude,
             )
 
-        # Query new weather for user
-        # TODO
+        # Update weather for new user location
+        update_weather_for_user(user)
 
     except TypeError:
         # There is no need to log any error or display
