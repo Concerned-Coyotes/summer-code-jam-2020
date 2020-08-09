@@ -66,7 +66,7 @@ def index(request: HttpRequest) -> HttpResponse:
         })
 
     # Todos
-    todos = TodoEntry.objects.filter(user=user).all()
+    todos = TodoEntry.objects.filter(user=user, done=False).all()
     context["todos"] = [(todo.id, todo.name) for todo in todos]
 
     return render(request=request,
