@@ -22,7 +22,7 @@ def update_weather_for_user(user: User) -> None:
         latitude=lat,
         longitude=lon,
     )
- 
+
 
 def fetch_weather() -> None:
     for user in User.objects.all():
