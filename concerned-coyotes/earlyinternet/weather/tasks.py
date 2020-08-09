@@ -18,11 +18,11 @@ def update_weather_for_user(user: User) -> None:
         city=weather['city'],
         sunrise=weather['sunrise'],
         sunset=weather['sunset'],
-        day=weather['day'],
+        day=weather['date'],
         latitude=lat,
         longitude=lon,
     )
-
+ 
 
 def fetch_weather() -> None:
     for user in User.objects.all():
