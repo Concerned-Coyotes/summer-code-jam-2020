@@ -16,6 +16,7 @@ pip install -r requirements.txt
 in a Python 3.8 environment.
 
 Switch to the project directory
+
 ```
 cd earlyinternet
 ```
@@ -51,3 +52,5 @@ Unfortunately we didn't have enough time to include all our planned features. Th
 The background image was taken from [unsplash](https://unsplash.com/photos/IKbpXrInCJY)
 
 Icons were provided by [tablericons](https://tablericons.com/) 
+
+
